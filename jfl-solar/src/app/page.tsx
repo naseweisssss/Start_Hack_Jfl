@@ -105,6 +105,21 @@ export default function Home() {
             ?.scrollIntoView({ behavior: "smooth" });
         }}
       >
+                <div style={{
+                    position: "absolute",
+                    height: "100vh",
+                    width: "100vw",
+                    top: 0,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center"
+                }}>
+                    <h1 style={{
+                        zIndex: "999",
+                        color: "#ffffff",
+                        fontSize: "64px"
+                    }}>Make a Difference</h1>
+                </div>
         <World />
       </section>
 
