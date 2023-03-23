@@ -26,12 +26,12 @@ const TutorialHeader = () => (
           onClick={onClickSideNavExpand}
           isActive={isSideNavExpanded}
         />
-        <HeaderName href="/" prefix="IBM">
-          Carbon Tutorial
+        <HeaderName href="/" prefix="JFL">
+          Solar Power
         </HeaderName>
-        <HeaderNavigation aria-label="Carbon Tutorial">
+        {/* <HeaderNavigation aria-label="Carbon Tutorial">
           <HeaderMenuItem href="/repos">Repositories</HeaderMenuItem>
-        </HeaderNavigation>
+        </HeaderNavigation> */}
         <SideNav
           aria-label="Side navigation"
           expanded={isSideNavExpanded}
@@ -39,7 +39,7 @@ const TutorialHeader = () => (
         >
           <SideNavItems>
             <HeaderSideNavItems>
-              <HeaderMenuItem href="/repos">Repositories</HeaderMenuItem>
+              {/* <HeaderMenuItem href="/repos">Repositories</HeaderMenuItem> */}
             </HeaderSideNavItems>
           </SideNavItems>
         </SideNav>

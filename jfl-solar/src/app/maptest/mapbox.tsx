@@ -5,8 +5,9 @@ import { useEffect, useLayoutEffect, useRef } from "react";
 import { GoogleMap, LoadScript, KmlLayer } from "@react-google-maps/api";
 
 const containerStyle = {
-    width: "400px",
-    height: "400px",
+    width: "600px",
+    height: "600px",
+    "box-sizing": "border-box",
 };
 
 const center = {
@@ -16,15 +17,17 @@ const center = {
 
 export default function MapBox() {
     return (
-        <LoadScript googleMapsApiKey={process.env.NEXT_PUBLIC_MAPS_API!}>
-            <GoogleMap
-                mapContainerStyle={containerStyle}
-                center={center}
-                zoom={10}
-            >
-              <KmlLayer url="https://github.com/naseweisssss/Start_Hack_Jfl/raw/main/jfl-solar/public/World_PVOUT_GoogleEarthData_GlobalSolarAtlas.kmz"></KmlLayer>
-            </GoogleMap>
-        </LoadScript>
+   
+         <LoadScript googleMapsApiKey={process.env.NEXT_PUBLIC_MAPS_API!}>
+             <GoogleMap
+                 mapContainerStyle={containerStyle}
+                 center={center}
+                 zoom={10}
+             >
+               
+             </GoogleMap>
+         </LoadScript>
+
 
     );
 }
