@@ -46,6 +46,7 @@ export default function Page() {
         globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
         backgroundColor='#90ee90'
         showAtmosphere={true}
+        // test pushhhhhh
       // backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png"
       // pointsData={volcanoes}
       // pointLat="lat"
