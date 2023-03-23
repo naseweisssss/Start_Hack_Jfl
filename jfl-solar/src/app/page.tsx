@@ -22,6 +22,7 @@ import {
   ProgressBar
 } from "carbon-components-react";
 import MapBox from "./maptest/mapbox";
+import { World } from './Globe'
 
 import GTF from "./maptest/geotiff";
 import { useEffect, useRef, useState } from "react";
@@ -70,8 +71,17 @@ export default function Home() {
 
   return (
     <main>
-      {/* <GlobalTheme theme="g100"> */}
       <TutorialHeader></TutorialHeader>
+      <section onClick={()=>{
+        document.getElementById("mainApp")?.scrollIntoView({behavior: 'smooth'})
+      }}>
+      <World/>
+      </section>
+      
+      {/* <GlobalTheme theme="g100"> */}
+      <section style={{marginTop:"48px"}} id="mainApp">
+
+      
       <Content>
         <Grid>
           <Column lg={12}>
@@ -153,6 +163,7 @@ export default function Home() {
           </Column>
         </Grid>
       </Content>
+      </section>
       {/* </GlobalTheme> */}
     </main>
   );
