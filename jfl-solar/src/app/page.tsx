@@ -118,7 +118,7 @@ export default function Home() {
                         zIndex: "999",
                         color: "#ffffff",
                         fontSize: "64px"
-                    }}>Make a Difference</h1>
+                    }}>Make a Difference ☀️</h1>
                 </div>
         <World />
       </section>
