@@ -102,7 +102,7 @@ export default function Home() {
                                             ></NumberInput>
                                         </FormGroup>
                                     </Row>
-                                    <Row>
+                                    <Row  style={{marginTop: "1rem"}}>
                                         <h3>
                                             Results:
                                         </h3>
