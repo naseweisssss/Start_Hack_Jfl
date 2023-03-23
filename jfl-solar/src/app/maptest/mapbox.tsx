@@ -35,13 +35,13 @@ const MapBox: React.FC<mapProps> = ({
                  zoom={10}
                  onClick={(_)=>{
                     let coordC = JSON.parse(JSON.stringify(_.latLng));
-                    // console.log(JSON.parse(JSON.stringify(_.latLng)))
+                    console.log(JSON.parse(JSON.stringify(_.latLng)))
                     setter({
                         lat: coordC.lat,
                         lng: coordC.lng
                     });
                 }}>
-                
+                {/* <KmlLayer url="https://github.com/naseweisssss/Start_Hack_Jfl/raw/main/jfl-solar/public/World_PVOUT_GoogleEarthData_GlobalSolarAtlas.kmz"></KmlLayer> */}
              
                
              </GoogleMap>
