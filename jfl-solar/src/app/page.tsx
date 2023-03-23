@@ -19,11 +19,14 @@ import {
   StructuredListCell,
   StructuredListRow,
   FormGroup,
+  ProgressBar
 } from "carbon-components-react";
 import MapBox from "./maptest/mapbox";
 
 import GTF from "./maptest/geotiff";
 import { useEffect, useRef, useState } from "react";
+import { GlobalTheme } from '@carbon/react';
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -35,6 +38,8 @@ export default function Home() {
   const numberRef = useRef();
   const pctRef = useRef();
   const [pva, setPVA] = useState(null);
+  const [score, setScore] = useState(0);
+  let status = "error"
 
   const fetchSolar = async () => {
     console.log("fetch", coord?.lat, coord?.lng);
@@ -45,6 +50,7 @@ export default function Home() {
       .then((res) => res.json())
       .then((data) => {
         console.log(data.properties.parameter.ALLSKY_SFC_SW_DWN["202113"]);
+        setLoading(false)
       });
   };
 
@@ -52,8 +58,19 @@ export default function Home() {
     fetchSolar();
   }, [coord]);
 
+  useEffect(()=>{
+    if(score < 30){
+      status = "error"
+    } else if (score >= 30 && score < 70){
+      status = "active"
+    } else {
+      status = "finished"
+    }
+  }, [score])
+
   return (
     <main>
+      {/* <GlobalTheme theme="g100"> */}
       <TutorialHeader></TutorialHeader>
       <Content>
         <Grid>
@@ -97,9 +114,7 @@ export default function Home() {
                   </Row>
                   <Row
                     style={{ marginTop: "1rem" }}
-                    onClick={() => {
-                      console.log(coord);
-                    }}
+                    
                   >
                     <h3>Results:</h3>
                   </Row>
@@ -123,12 +138,22 @@ export default function Home() {
                       </StructuredListBody>
                     </StructuredListWrapper>
                   </Row>
+                  <Row
+                    style={{ marginTop: "1rem", marginBottom: "1rem" }}
+                    
+                  >
+                    <h3>Score:</h3>
+                  </Row>
+                  <Row>
+                    <ProgressBar label={"Score"} hideLabel={true} value={loading ? null : score}></ProgressBar>
+                  </Row>
                 </Column>
               </Grid>
             </Row>
           </Column>
         </Grid>
       </Content>
+      {/* </GlobalTheme> */}
     </main>
   );
 }
