@@ -8,7 +8,7 @@ export default function GTF() {
         const load = async () => {
             const gtiff = await fromUrl("/switzerland/DIF.tif");
             const gimage = await gtiff.getImage();
-            console.log(gimage.getWidth);
+            console.log(gimage.getWidth());
         }
 
         load();

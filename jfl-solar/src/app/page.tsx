@@ -14,25 +14,32 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
     <main>
-      {/* <TutorialHeader></TutorialHeader>
+      <TutorialHeader></TutorialHeader>
       <Content>
-        <FlexGrid>
-        <Row>
-            <Column>
-            
+        <Grid>
+        
+            <Column lg={12}>
+            <Row >
+            {/* <Tile>Test</Tile> */}
             <MapBox></MapBox>
+            
+            </Row>
+            
             
               
             </Column>
-            <Column sm={1} md={1} lg={1}>
-              <Tile>Test</Tile>
+            <Column lg={4}>
+            <Row>
+            <Tile>Test</Tile>
+            </Row>
+              
               
             </Column>
           
-            </Row>
-        </FlexGrid>
+          
+        </Grid>
         
-      </Content> */}
+      </Content>
 
       <GTF></GTF>
     </main>

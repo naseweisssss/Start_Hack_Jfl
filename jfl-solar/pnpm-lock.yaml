@@ -21,6 +21,7 @@ specifiers:
   react-dom: 18.2.0
   sass: ^1.59.3
   typescript: 5.0.2
+  web-worker: ^1.2.0
 
 dependencies:
   '@react-google-maps/api': 2.18.1_biqbaboplfbrettd7655fr4n2y
@@ -40,6 +41,7 @@ dependencies:
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   typescript: 5.0.2
+  web-worker: 1.2.0
 
 devDependencies:
   '@carbon/react': 1.25.0_dpxg4zawgzznnxdt7it3f5d76m
