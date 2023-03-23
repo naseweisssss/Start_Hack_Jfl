@@ -43,6 +43,10 @@ export const World = () => {
     return () => window.removeEventListener("keydown", handleKeyDown)
   }, [])
 
+  const [countries, setCountries] = useState({ features: []});
+  const [hoverD, setHoverD] = useState();
+
+  
   useEffect(() => {
     const renderGlobe = () => {
       ReactDOM.render(
@@ -56,12 +60,23 @@ export const World = () => {
           pathPoints="coords"
           pathPointLat={(p) => p[1]}
           pathPointLng={(p) => p[0]}
-          pathColor={() => "rgba(137, 196, 244, 1)"}
+          pathColor={() => "rgba(241, 90, 34, 1)"}
           pathPointAlt={0.01}
           pathDashLength={0.1}
           pathDashGap={0.008}
           pathDashAnimateTime={12000}
-          hexPolygonsData={countries.features}
+          polygonsData={countries.features.filter(d => d.properties.ISO_A2 !== 'AQ')}
+      polygonAltitude={d => d === hoverD ? 0.12 : 0.06}
+      polygonCapColor={d => d === hoverD ? 'steelblue' : colorScale(getVal(d))}
+      polygonSideColor={() => 'rgba(0, 100, 0, 0.15)'}
+      polygonStrokeColor={() => '#111'}
+      polygonLabel={({ properties: d }) => `
+        <b>${d.ADMIN} (${d.ISO_A2}):</b> <br />
+        GDP: <i>${d.GDP_MD_EST}</i> M$<br/>
+        Population: <i>${d.POP_EST}</i>
+      `}
+      onPolygonHover={setHoverD}
+      polygonsTransitionDuration={300}
           hexPolygonResolution={3}
           hexPolygonMargin={0.3}
           animateIn={true}
