@@ -14,7 +14,7 @@ import { GoogleMap, LoadScript, KmlLayer } from "@react-google-maps/api";
 const containerStyle: CSSProperties = {
   width: "100%",
   height: "600px",
-  boxSizing: `borderBox`,
+  // boxSizing: `borderBox`,
 };
 
 let center = {

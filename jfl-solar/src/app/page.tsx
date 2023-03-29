@@ -140,7 +140,7 @@ export default function Home() {
                       <h3>Input Parameters:</h3>
                     </Row>
                     <Row>
-                      <FormGroup>
+                      <FormGroup legendText="">
                         <NumberInput
                           ref={numberRef}
                           id={"jhgfjhg"}
